@@ -1,4 +1,3 @@
-
 var cartItems = {};
 var itemPrices = {
   'burger': 59,
@@ -50,6 +49,15 @@ function updateCart() {
 
   var totalBillElement = document.getElementById("total-bill");
   totalBillElement.innerText = totalBill.toFixed(2);
+
+  // Reset quantity display for menu items with zero count
+  var quantityElements = document.getElementsByClassName("quantity");
+  for (var i = 0; i < quantityElements.length; i++) {
+    var itemId = quantityElements[i].id.split('-')[1];
+    if (!cartItems[itemId]) {
+      quantityElements[i].textContent = '0';
+    }
+  }
 }
 
 function placeOrder() {
@@ -71,20 +79,12 @@ function placeOrder() {
   var otp = Math.floor(1000 + Math.random() * 9000);
 
   // Display order details and OTP in a popup
-  var orderSummary = orderText + "\nTotal Bill: ₹" + totalBill.toFixed(2) + "\n\nOTP: " + otp;
+  var orderSummary = orderText + "\nTotal Bill: $" + totalBill.toFixed(2) + "\n\nOTP: " + otp;
   alert("Order Placed!\n\n" + orderSummary);
 
   // Clear the cart and reset quantity to zero
   cartItems = {};
   updateCart();
-  resetQuantity();
-}
-
-function resetQuantity() {
-  var quantityElements = document.getElementsByClassName("quantity");
-  for (var i = 0; i < quantityElements.length; i++) {
-    quantityElements[i].textContent = '0';
-  }
 }
 
 
