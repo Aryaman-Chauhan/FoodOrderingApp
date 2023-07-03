@@ -325,7 +325,6 @@ h1, h2, h3, h4, h5, h6{
 #mid_section:hover{
     color: #ff4c68;
 }
-
     
 .test-image{
     width: 10%;
@@ -333,12 +332,28 @@ h1, h2, h3, h4, h5, h6{
     margin: 20px;
 }
 
+.auth-text{
+    font-size: 30px;
+}
+
 #press{
     padding-bottom: 3%;
 }
 
 .press-logo{
-    width: 10%;
+    /* border-radius: 10%; */
+    width: 180px;
+    margin: 0 3% 2%;
+}
+
+.press-logo-amul{
+    /* border-radius: 120%; */
+    width: 280px;
+    margin: 0 1% 2%;
+}
+.press-logo-lt{
+    /* border-radius: 120%; */
+    width: 190px;
     margin: 0 3% 2%;
 }
 
