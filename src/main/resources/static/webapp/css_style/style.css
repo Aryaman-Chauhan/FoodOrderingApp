@@ -9,8 +9,7 @@
 
 body{
     font-family: "Montserrat"; 
-    text-align: center;  
-    
+    text-align: center;    
 }
 
 h1, h2, h3, h4, h5, h6{  
@@ -278,6 +277,12 @@ h1, h2, h3, h4, h5, h6{
     font-size: 1em;
     color: #fff;
     font-weight: 500;
+}
+
+.us-btnl{
+    text-decoration: none;
+    color: #fff;
+
 }
 
 .login-signup{
