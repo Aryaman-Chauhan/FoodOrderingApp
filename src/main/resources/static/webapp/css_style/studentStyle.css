@@ -34,7 +34,7 @@ body{
 .bg-red{
     position: relative;
     min-height: 70vh;
-    background: url('/Screenshot\ 2023-06-17\ 123532.png') no-repeat;
+    background: url('../Screenshot 2023-06-17 123532.png') no-repeat;
     background-size: cover;
     background-position: center;
 }
