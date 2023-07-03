@@ -36,7 +36,7 @@ h1, h2, h3, h4, h5, h6{
 .bg-red{
     position: relative;
     min-height: 70vh;
-    background: url('/Screenshot\ 2023-06-17\ 123532.png') no-repeat;
+    background: url('/src/main/resources/static/webapp/Screenshot\ 2023-06-17\ 123532.png') no-repeat;
     background-size: cover;
     background-position: center;
 }
