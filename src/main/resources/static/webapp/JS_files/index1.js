@@ -79,7 +79,7 @@ function placeOrder() {
   var otp = Math.floor(1000 + Math.random() * 9000);
 
   // Display order details and OTP in a popup
-  var orderSummary = orderText + "\nTotal Bill: $" + totalBill.toFixed(2) + "\n\nOTP: " + otp;
+  var orderSummary = orderText + "\nTotal Bill: ₹" + totalBill.toFixed(2) + "\n\nOTP: " + otp;
   alert("Order Placed!\n\n" + orderSummary);
 
   // Clear the cart and reset quantity to zero
