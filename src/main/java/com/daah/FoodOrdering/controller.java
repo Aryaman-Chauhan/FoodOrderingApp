@@ -1,16 +1,43 @@
 package com.daah.FoodOrdering;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.ModelAndView;
 
-@RestController
+@Controller
 public class controller {
-    @RequestMapping("signin")
-    public ModelAndView signin(){
-        System.out.println("Heyyy");
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("signin");
-        return modelAndView;
+	
+	@RequestMapping("/")
+    public String homePage(){
+        return "index";
+    }
+	
+    @RequestMapping("/Eeat")
+    public String eatery() {
+    	return "Eeateries";
+    }
+        
+    @RequestMapping("/Emenu")
+    public String menuEatery() {
+    	return "EmenuEateries";
+    }
+    
+    @RequestMapping("/Eorder")
+    public String orderEatery() {
+    	return "EorderEateries";
+    }
+    
+    @RequestMapping("/Ustud")
+    public String student() {
+    	return "Ustudent";		
+	}
+    
+    @RequestMapping("/Uorder")
+    public String orderStudent() {
+    	return "UorderUser";
+    }
+    
+    @RequestMapping("/Umenu")
+    public String menuStudent() {
+    	return "UmenuUser";
     }
 }

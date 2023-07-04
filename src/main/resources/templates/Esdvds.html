@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="https://thymeleaf.org">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="" th:href="@{https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css}">
   <style>
     body {
       transform: scale(1.2);
@@ -33,7 +33,7 @@
     <!-- Menu item 1 -->
     <div class="menu-item">
       <h3>Item 1</h3>
-      <img src="item1.jpg" alt="Item 1">
+      <img src="" th:src="@{images/item1.jpg}" alt="Item 1">
       <p>Description: Lorem ipsum dolor sit amet.</p>
       <p>Price: $10.99</p>
       <div class="actions">
@@ -45,7 +45,7 @@
     <!-- Menu item 2 -->
     <div class="menu-item">
       <h3>Item 2</h3>
-      <img src="item2.jpg" alt="Item 2">
+      <img src="" th:src="@{images/item2.jpg}" alt="Item 2">
       <p>Description: Consectetur adipiscing elit.</p>
       <p>Price: $8.99</p>
       <div class="actions">
@@ -63,7 +63,7 @@
     </div>
   </div>
 
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/js/bootstrap.min.js"></script>
+  <script src="" th:src="@{https://code.jquery.com/jquery-3.5.1.slim.min.js}"></script>
+  <script src="" th:src="@{https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/js/bootstrap.min.js}"></script>
 </body>
 </html>

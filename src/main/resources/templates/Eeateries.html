@@ -1,23 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" xmlns:th="https://thymeleaf.org">
 
 <head>
   <meta charset="utf-8">
   <title>EATERY</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <link href="" th:href="@{https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css}" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 
   <!-- css styling -->
-  <link rel="stylesheet" href="../css_style/style.css">
+  <link rel="stylesheet" href="" th:href="@{/css_style/style.css}">
   
   <!-- google font family -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;700&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+  <link href="" th:href="@{https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;700&family=Ubuntu:wght@300&display=swap}" rel="stylesheet">
 
 <!-- font awesome -->
-  <script src="https://kit.fontawesome.com/460f3a80d0.js" crossorigin="anonymous"></script>
+  <script src="" th:src="@{https://kit.fontawesome.com/460f3a80d0.js}" crossorigin="anonymous"></script>
   <!-- <script defer src="hhtps://use.fontawesome.com/releases/v6.2.0/js/all.js"></script> -->
 
   <!-- bootstrap script -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+  <script src="" th:src="@{https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js}" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script> -->
   
@@ -29,7 +29,7 @@
     
             <!-- Nav Bar -->
             <nav class="navigation navbar navbar-expand-lg navbar-dark ">
-                <a href="index.html" class="navbar-brand bg-logo"><img src="../BITS_Pilani-Logo.png" alt="BITS_Pilani-Logo" class="logo-pic"></a>
+                <a href="" th:href="@{/}" class="navbar-brand bg-logo"><img src="" th:src="@{/images/BITS_Pilani-Logo.png}" alt="BITS_Pilani-Logo" class="logo-pic"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -38,16 +38,16 @@
     
                     <ul class="navbar-nav ms-auto">
                       <li class="nav-item">
-                        <a class="nav-link" href="../html_eateries/menuEateries.html">Menu</a>
+                        <a class="nav-link" href="" th:href="@{Emenu}">Menu</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="../html_eateries/orderEateries.html">Order</a>
+                        <a class="nav-link" href="" th:href="@{Eorder}">Order</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="#reviews">Reviews</a>
+                        <a class="nav-link" href="" th:href="@{#reviews}">Reviews</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="#cta">Contact Us</a>
+                        <a class="nav-link" href="" th:href="@{#cta}">Contact Us</a>
                       </li>
                       <li class="nav-item">
                         <button type="button" class="btnLogin-popup btn download-button">Login</button>
@@ -79,13 +79,13 @@
                         <label>
                             <input type="checkbox">Remember me
                         </label>
-                        <a href="#">Forgot Password?</a>
+                        <a href="" th:href="@{#}">Forgot Password?</a>
                     </div>
                     <button type="submit" class="btnl">Login</button>
                     <div class="login-signup">
-                        <p>Don't have an account?<a href="#" class="sign-up-link">Sign Up</a></p>
+                        <p>Don't have an account?<a href="" th:href="@{#}" class="sign-up-link">Sign Up</a></p>
                     </div>
-                    <button type="button" class="btnl"><a class="us-btnl" href="../html_user/student.html">User Login/Signup</a></button>
+                    <button type="button" class="btnl"><a class="us-btnl" href="" th:href="@{Ustud}">User Login/Signup</a></button>
                 </form>
             </div>
     
@@ -124,7 +124,7 @@
                     </div>
                     <button type="submit" class="btnl">Sign Up</button>
                     <div class="login-signup">
-                        <p>Already have an account?<a href="#" class="login-link">Login</a></p>
+                        <p>Already have an account?<a href="" th:href="@{#}" class="login-link">Login</a></p>
                     </div>
                 </form>
             </div>
@@ -156,22 +156,22 @@
             <div class="carousel-inner">
                 <div class="section-padd carousel-item active">
                     <h2 class="heading-text">Our Eatery went online for food ordering system and it's been a game-changer! Convenient, efficient, and no angry customer. Highly recommend!</h2>
-                    <img class="test-image" src="../images/EateryPageimg/ramesh.jpg" alt="dog-profile">
+                    <img class="test-image" src="" th:src="@{/images/EateryPageimg/ramesh.jpg}" alt="dog-profile">
                     <em class="auth-text">Ramesh, Amul</em>
                   </div>
                   <div class="section-padd carousel-item">
                     <h2 class="heading-text">Efficient and convenient food ordering system! Ordering online was a breeze, and the customer response was seamless. Delicious food, no compromise!</h2>
-                    <img class="test-image" src="../images/EateryPageimg/suresh.jpg" alt="lady-profile">
+                    <img class="test-image" src="" th:src="@{/images/EateryPageimg/suresh.jpg}" alt="lady-profile">
                     <em class="auth-text">Suresh, Looters</em>
                   </div>
                   <div class="section-padd carousel-item">
                     <h2 class="heading-text">Fantastic transition to online food ordering! Quick service, delicious food, and seamless ordering process. Highly recommend their system!</h2>
-                    <img class="test-image" src="../images/EateryPageimg/kamlesh.jpg" alt="lady-profile">
+                    <img class="test-image" src="" th:src="@{/images/EateryPageimg/kamlesh.jpg}" alt="lady-profile">
                     <em class="auth-text">kamlesh, TOTT/Mr.Idli</em>
                   </div>
                   <div class="section-padd carousel-item">
                     <h2 class="heading-text">Thrilled to have taken our business online with a food ordering system! Convenient, efficient, and delicious food at your fingertips.#CustomerSatisfaction</h2>
-                    <img class="test-image" src="../images/EateryPageimg/brijesh.jpg" alt="lady-profile">
+                    <img class="test-image" src="" th:src="@{/images/EateryPageimg/brijesh.jpg}" alt="lady-profile">
                     <em class="auth-text">Brijesh, Yummpy's</em>
                   </div>
             </div>
@@ -187,10 +187,10 @@
     </section>
 
     <section id="press" class="bg-two">
-        <img class="press-logo-amul" src="../images/EateryPageimg/amul.png" alt="amul-logo">
-        <img class="press-logo-lt" src="../images/EateryPageimg/looters.png" alt="looters-logo">
-        <img class="press-logo" src="../images/EateryPageimg/tott.png" alt="tott-logo">
-        <img class="press-logo" src="../images/EateryPageimg/yummpy.png" alt="yummpys-logo">
+        <img class="press-logo-amul" src="" th:src="@{/images/EateryPageimg/amul.png}" alt="amul-logo">
+        <img class="press-logo-lt" src="" th:src="@{/images/EateryPageimg/looters.png}" alt="looters-logo">
+        <img class="press-logo" src="" th:src="@{/images/EateryPageimg/tott.png}" alt="tott-logo">
+        <img class="press-logo" src="" th:src="@{/images/EateryPageimg/yummpy.png}" alt="yummpys-logo">
 
     </section>
 
@@ -231,15 +231,15 @@
     </section>
 
     <footer id="footer">
-        <a href="https://twitter.com/" target="_blank" rel="noopener"><i class="footer-icon fa-brands fa-twitter"></i></a>
-        <a href="https://www.facebook.com/" target="_blank" rel="noopener"><i class="footer-icon fa-brands fa-facebook"></i></a>
-        <a href="https://www.instagram.com/" target="_blank" rel="noopener"><i class="footer-icon fa-brands fa-instagram"></i></a>
-        <a href="https://mail.google.com/" target="_blank" rel="noopener"><i class="footer-icon fa-solid fa-envelope"></i></a>
+        <a href="" th:href="@{https://twitter.com/}" target="_blank" rel="noopener"><i class="footer-icon fa-brands fa-twitter"></i></a>
+        <a href="" th:href="@{https://www.facebook.com/}" target="_blank" rel="noopener"><i class="footer-icon fa-brands fa-facebook"></i></a>
+        <a href="" th:href="@{https://www.instagram.com/}" target="_blank" rel="noopener"><i class="footer-icon fa-brands fa-instagram"></i></a>
+        <a href="" th:href="@{https://mail.google.com/}" target="_blank" rel="noopener"><i class="footer-icon fa-solid fa-envelope"></i></a>
         <p>Made with <ion-icon class="footer-love" name="heart"></ion-icon> by DAAH</p>
         <p>© Copyright DAAH</p>
     </footer>
-    <script src="../JS_files/index.js"></script>
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="" th:src="@{/JS_files/index.js}"></script>
+    <script type="module" src="" th:src="@{https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js}"></script>
+    <script nomodule src="" th:src="@{https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js}"></script>
 </body>
 </html>

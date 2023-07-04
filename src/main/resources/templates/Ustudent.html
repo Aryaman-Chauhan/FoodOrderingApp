@@ -1,21 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="https://thymeleaf.org">
 
 <head>
     <meta charset="utf-8">
     <title>STUDENT</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link href="" th:href="@{https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css}" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
           
-    <link rel="stylesheet" href="../css_style/studentStyle.css">
+    <link rel="stylesheet" href="" th:href="@{/css_style/studentStyle.css}">
   <!-- google font family -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;700&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+    <link href="" th:href="@{https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;700&family=Ubuntu:wght@300&display=swap}" rel="stylesheet">
 
 <!-- font awesome -->
-    <script src="https://kit.fontawesome.com/460f3a80d0.js" crossorigin="anonymous"></script>
+    <script src="" th:src="@{https://kit.fontawesome.com/460f3a80d0.js}" crossorigin="anonymous"></script>
   <!-- <script defer src="hhtps://use.fontawesome.com/releases/v6.2.0/js/all.js"></script> -->
 
   <!-- bootstrap script -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <script src="" th:src="@{https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js}" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     
 </head>
 <body>
@@ -24,7 +24,7 @@
     
             <!-- Nav Bar -->
             <nav class="navigation navbar navbar-expand-lg navbar-dark ">
-                <a href="../html_user/student.html" class="navbar-brand bg-logo"><img src="../BITS_Pilani-Logo.png" alt="BITS_Pilani-Logo" class="logo-pic"></a>
+                <a href="" th:href="@{/}" class="navbar-brand bg-logo"><img src="" th:src="@{/images/BITS_Pilani-Logo.png}" alt="BITS_Pilani-Logo" class="logo-pic"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -34,13 +34,13 @@
     
                     <ul class="navbar-nav ms-auto">
                       <li class="nav-item">
-                        <a class="nav-link" href="../html_user/orderUser.html">Order</a>
+                        <a class="nav-link" href="" th:href="@{Uorder}">Order</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="#reviews">Reviews</a>
+                        <a class="nav-link" href="" th:href="@{#reviews}">Reviews</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="#cta">Contact Us</a>
+                        <a class="nav-link" href="" th:href="@{#cta}">Contact Us</a>
                       </li>
                       <li class="nav-item">
                         <button type="button" class="btnLogin-popup btn download-button">Login</button>
@@ -70,13 +70,13 @@
                         <label>
                             <input type="checkbox">Remember me
                         </label>
-                        <a href="#">Forgot Password?</a>
+                        <a href="" th:href="@{#}">Forgot Password?</a>
                     </div>
                     <button type="submit" class="btnl">Login</button>
                     <div class="login-signup">
-                        <p>Don't have an account?<a href="#" class="sign-up-link">Sign Up</a></p>
+                        <p>Don't have an account?<a href="" th:href="@{#}" class="sign-up-link">Sign Up</a></p>
                     </div>
-                    <button type="button" class="btnl"><a class="eat-btnl" href="../html_eateries/eateries.html">Eatery Login/Signup</a></button>
+                    <button type="button" class="btnl"><a class="eat-btnl" href="" th:href="@{Eeat}">Eatery Login/Signup</a></button>
                 </form>
             </div>
     
@@ -105,7 +105,7 @@
                     </div>
                     <button type="submit" class="btnl">Sign Up</button>
                     <div class="login-signup">
-                        <p>Already have an account?<a  href="#" class="login-link">Login</a></p>
+                        <p>Already have an account?<a  href="" th:href="@{#}" class="login-link">Login</a></p>
                     </div>
                 </form>
             </div>
@@ -137,22 +137,22 @@
             <div class="carousel-inner">
                 <div class="section-padd carousel-item active">
                   <h2 class="heading-text">The food ordering system is convenient, user-friendly, and offers a wide variety of delicious options. Highly recommended!</h2>
-                  <img class="test-image" src="../images/EateryPageimg/devansh.png" alt="dog-profile">
+                  <img class="test-image" src="" th:src="@{/images/EateryPageimg/devansh.png}" alt="dog-profile">
                   <em class="auth-text">Devansh, Hostel-A</em>
                 </div>
                 <div class="section-padd carousel-item">
                   <h2 class="heading-text">The food ordering system is fantastic! Easy to navigate, quick pick-up, and delicious food options. Highly recommend! 5/5 ⭐️</h2>
-                  <img class="test-image" src="../images/EateryPageimg/arin.jpg" alt="lady-profile">
+                  <img class="test-image" src="" th:src="@{/images/EateryPageimg/arin.jpg}" alt="lady-profile">
                   <em class="auth-text">Arin, Hostel-C</em>
                 </div>
                 <div class="section-padd carousel-item">
                   <h2 class="heading-text">The food ordering system is a game-changer! Convenient, fast, and the variety of options is impressive. Efforts are highly appreciated!</h2>
-                  <img class="test-image" src="../images/EateryPageimg/aryaman.jpg" alt="lady-profile">
+                  <img class="test-image" src="" th:src="@{/images/EateryPageimg/aryaman.jpg}" alt="lady-profile">
                   <em class="auth-text">Aryaman, Hostel-B</em>
                 </div>
                 <div class="section-padd carousel-item">
                   <h2 class="heading-text">Excellent food ordering system! Easy to use, no waste of time, delicious food, and great customer service. Highly recommended! 🍔🚗 </h2>
-                  <img class="test-image" src="../images/EateryPageimg/harsh.jpg" alt="lady-profile">
+                  <img class="test-image" src="" th:src="@{/images/EateryPageimg/harsh.jpg}" alt="lady-profile">
                   <em class="auth-text">Harshvardhan, Hostel-A</em>
                 </div>
             </div>
@@ -168,10 +168,10 @@
     </section>
 
     <section id="press" class="bg-two">
-        <img class="press-logo-amul" src="../images/EateryPageimg/amul.png" alt="amul-logo">
-        <img class="press-logo-lt" src="../images/EateryPageimg/looters.png" alt="looters-logo">
-        <img class="press-logo" src="../images/EateryPageimg/tott.png" alt="tott-logo">
-        <img class="press-logo" src="../images/EateryPageimg/yummpy.png" alt="yummpys-logo">
+        <img class="press-logo-amul" src="" th:src="@{/images/EateryPageimg/amul.png}" alt="amul-logo">
+        <img class="press-logo-lt" src="" th:src="@{/images/EateryPageimg/looters.png}" alt="looters-logo">
+        <img class="press-logo" src="" th:src="@{/images/EateryPageimg/tott.png}" alt="tott-logo">
+        <img class="press-logo" src="" th:src="@{/images/EateryPageimg/yummpy.png}" alt="yummpys-logo">
 
     </section>
 
@@ -212,16 +212,16 @@
     </section>
 
     <footer id="footer">
-        <a href="https://twitter.com/" target="_blank" rel="noopener"><i class="footer-icon fa-brands fa-twitter"></i></a>
-        <a href="https://www.facebook.com/" target="_blank" rel="noopener"><i class="footer-icon fa-brands fa-facebook"></i></a>
-        <a href="https://www.instagram.com/" target="_blank" rel="noopener"><i class="footer-icon fa-brands fa-instagram"></i></a>
-        <a href="https://mail.google.com/" target="_blank" rel="noopener"><i class="footer-icon fa-solid fa-envelope"></i></a>
+        <a href="" th:href="@{https://twitter.com/}" target="_blank" rel="noopener"><i class="footer-icon fa-brands fa-twitter"></i></a>
+        <a href="" th:href="@{https://www.facebook.com/}" target="_blank" rel="noopener"><i class="footer-icon fa-brands fa-facebook"></i></a>
+        <a href="" th:href="@{https://www.instagram.com/}" target="_blank" rel="noopener"><i class="footer-icon fa-brands fa-instagram"></i></a>
+        <a href="" th:href="@{https://mail.google.com/}" target="_blank" rel="noopener"><i class="footer-icon fa-solid fa-envelope"></i></a>
         <p>Made with <ion-icon class="footer-love" name="heart"></ion-icon> by DAAH</p>
         <p>© Copyright DAAH</p>
     </footer>
 
-    <script src="../JS_files/index1.js"></script>
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="" th:src="@{/JS_files/index1.js}"></script>
+    <script type="module" src="" th:src="@{https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js}"></script>
+    <script nomodule src="" th:src="@{https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js}"></script>
 </body>
 </html>
