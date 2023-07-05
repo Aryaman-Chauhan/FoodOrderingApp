@@ -22,6 +22,37 @@
 
 // const express = require("express");
 // const bodyparser = require("body-parser");
+// const menuBtn = document.querySelector(".menu-btn")
+// const navigation = document.querySelector(".navigation")
+
+// menuBtn.addEventListener("click", ()=>{
+//     menuBtn.classList.toggle("active");
+//     navigation.classList.toggle("active");
+// });
+
+const btns = document.querySelectorAll(".nav-btn");
+const slides = document.querySelectorAll(".video-slide");
+
+var sliderNav = function(manual){
+    btns.forEach((btn) =>{
+        btn.classList.remove("active");
+    });
+    slides.forEach((slide) =>{
+        slide.classList.remove("active");
+    });
+
+
+    btns[manual].classList.add("active");
+    slides[manual].classList.add("active");
+}
+
+btns.forEach((btn, i) => {
+    btn.addEventListener("click", () =>{
+        sliderNav(i);
+    });
+});
+
+
 const wrapper = document.querySelector('.wrapper');
 const loginLink = document.querySelector('.login-link');
 const signupLink = document.querySelector('.sign-up-link');
