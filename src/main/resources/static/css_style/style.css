@@ -326,7 +326,7 @@ h1, h2, h3, h4, h5, h6{
 
 .form-box h2{
     font-size: 1.5em;
-    color: #162938;
+    color: #fff;
     text-align: center;
     
 }
@@ -346,7 +346,7 @@ h1, h2, h3, h4, h5, h6{
     left: 5px;
     transform: translateY(-40%);
     font-size: 0.8em;
-    color: #162938;
+    color: #fff;
     font-weight: 500;
     pointer-events: none;
     transition: 0.1s;
@@ -363,7 +363,7 @@ h1, h2, h3, h4, h5, h6{
     border: none;
     outline: none;
     font-size: 0.8em;
-    color: #162938;
+    color: #fff;
     font-weight: 600;
     padding: 0 35px 0 5px;
 }
@@ -372,13 +372,13 @@ h1, h2, h3, h4, h5, h6{
     position: absolute;
     right: 8px;
     font-size: 1.2em;
-    color: #162938;
+    color: #fff;
     line-height: 57px;
 }
 
 .remember-forgot{
     font-size: 0.8em;
-    color: #162938;
+    color: #fff;
     font-weight: 500;
     margin: -15px 0 15px;
     display: flex;
@@ -387,12 +387,12 @@ h1, h2, h3, h4, h5, h6{
 }
 
 .remember-forgot label input{
-    accent-color: #162938;
+    accent-color: #fff;
     margin-right: 3px;
 }
 
 .remember-forgot a{
-    color: #162938;
+    color: #fff;
     text-decoration: none;
 }
 
@@ -424,7 +424,7 @@ h1, h2, h3, h4, h5, h6{
 
 .login-signup{
     font-size: 0.9em;
-    color: #162938;
+    color: #fff;
     text-align: center;
     font-weight: 500;
     margin: 25px 0 10px 5;
@@ -432,7 +432,7 @@ h1, h2, h3, h4, h5, h6{
 }
 
 .login-signup p a{
-    color: #162938;
+    color: #fff;
     text-decoration: none;
     font-weight: 600;
 }
