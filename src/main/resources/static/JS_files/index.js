@@ -30,6 +30,17 @@
 //     navigation.classList.toggle("active");
 // });
 
+// -------------------ACTIVE LINK-----------------------
+const activePage = window.location.pathname;
+const navLinks = document.querySelectorAll('.nav-link');
+navLinks.forEach(link => {
+  if (link.href.includes(activePage)) {
+    link.classList.add('active');
+  }
+});
+
+
+//----------------HOME PAGE VIDEO SLIDER------------------------------
 const btns = document.querySelectorAll(".nav-btn");
 const slides = document.querySelectorAll(".video-slide");
 
@@ -53,6 +64,7 @@ btns.forEach((btn, i) => {
 });
 
 
+//-------------------HOME PAGE LOGIN------------------------
 const wrapper = document.querySelector('.wrapper');
 const loginLink = document.querySelector('.login-link');
 const signupLink = document.querySelector('.sign-up-link');
@@ -76,3 +88,27 @@ iconClose.addEventListener('click', ()=>{
 });
 
 
+//-------------------EATERY ORDER PAGE---------------------------------------
+// Countdown Timer
+function startTimer(duration, display) {
+  var timer = duration, minutes, seconds;
+  setInterval(function () {
+    minutes = parseInt(timer / 60, 10);
+    seconds = parseInt(timer % 60, 10);
+
+    minutes = minutes < 10 ? "0" + minutes : minutes;
+    seconds = seconds < 10 ? "0" + seconds : seconds;
+
+    display.textContent = minutes + ":" + seconds;
+
+    if (--timer < 0) {
+      timer = 0;
+    }
+  }, 1000);
+}
+
+var cancelTimer3 = document.getElementById("cancel-timer-3");
+startTimer(150, cancelTimer3);
+
+var cancelTimer4 = document.getElementById("cancel-timer-4");
+startTimer(150, cancelTimer4);

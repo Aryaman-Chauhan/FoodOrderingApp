@@ -1,3 +1,5 @@
+
+//---------------------MENU PAGE-----------------------------
 var cartItems = {};
 var itemPrices = {
   'burger': 59,
@@ -88,7 +90,7 @@ function placeOrder() {
 }
 
 
-
+//-------------------LOGIN POP UP------------------------
 const wrapper = document.querySelector('.wrapper');
 const loginLink = document.querySelector('.login-link');
 const signupLink = document.querySelector('.sign-up-link');

@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Food Order</title>
+  <title>EATERY MENU</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 
   <!-- we imcluded javascript because our toggle button did'nt work responsively and the function that
@@ -135,6 +135,41 @@
             </div>
         <p>this is menu</p>
     </section>
+    <div class="container">
+        <h1>Restaurant Menu</h1>
+    
+        <!-- Menu item 1 -->
+        <div class="menu-item">
+          <h3>Burger</h3>
+          <img src="" th:src="@{images/userPageImg/burger.jpg}" alt="Item 1">
+          <p>Description: Lorem ipsum dolor sit amet.</p>
+          <p><b>Price: &#8377;59</b></p>
+          <div class="actions">
+            <button class="btn btn-primary">Edit</button>
+            <button class="btn btn-danger">Remove</button>
+          </div>
+        </div>
+    
+        <!-- Menu item 2 -->
+        <div class="menu-item">
+          <h3>Soup</h3>
+          <img src="" th:src="@{images/userPageImg/soup.jpg}" alt="Item 2">
+          <p>Description: Consectetur adipiscing elit.</p>
+          <p><b>Price: &#8377;89</b></p>
+          <div class="actions">
+            <button class="btn btn-primary">Edit</button>
+            <button class="btn btn-danger">Remove</button>
+          </div>
+        </div>
+    
+        <!-- Add New Item -->
+        <div class="menu-item">
+          <h3>Add New Item</h3>
+          <div class="actions">
+            <button class="btn btn-success add-btn">Add Item</button>
+          </div>
+        </div>
+      </div>
 
     <!-- <div class="wrapper">
         <span class="icon-close">

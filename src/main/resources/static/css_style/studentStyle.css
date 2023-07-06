@@ -269,7 +269,7 @@ h1, h2, h3, h4, h5, h6{
 .btnl{
     width: 100%;
     height: 45px;
-    background: #fff;
+    background: #162938;
     border: none;
     outline: none;
     border-radius: 6px;
@@ -284,6 +284,10 @@ h1, h2, h3, h4, h5, h6{
     color: #fff;
 }
 
+.eat-btnl:hover, .btnl:hover{
+    color: #4c46f5;
+}
+
 .login-signup{
     font-size: 0.9em;
     color: #fff;
@@ -303,14 +307,10 @@ h1, h2, h3, h4, h5, h6{
     text-decoration: underline;
 }
 
-#reviews{
-    height: 40vh;
-    
-}
 
 .login-signup{
     font-size: 0.9em;
-    color: #162938;
+    color: #fff;
     text-align: center;
     font-weight: 500;
     margin: 25px 0 10px 5;
@@ -318,7 +318,7 @@ h1, h2, h3, h4, h5, h6{
 }
 
 .login-signup p a{
-    color: #162938;
+    color: #fff;
     text-decoration: none;
     font-weight: 600;
 }
@@ -327,29 +327,38 @@ h1, h2, h3, h4, h5, h6{
     text-decoration: underline;
 }
 
-/* #reviews{
-    
-} */
-/* ----------------REVIEWS------------------------- */
-#t-mid{
-    margin: 0;
-}
+
+/* ----------------FEATURES------------------------- */
 
 .section-padd{
     padding: 5% 15%;
 }
 
+#t-mid{
+    margin: 0;
+}
 
 #mid_section{
-    color: #ef8172;
+    color: #e97b26;
     font-size: 3rem;
     margin-bottom: 20px;
 }
 
 #mid_section:hover{
-    color: #ff4c68;
+    color: #e2610b;
 }
-    
+
+/* ----------------REVIEWS------------------------- */
+
+#reviews{
+    height: 40vh;
+}
+
+.heading-text{
+    font-size: 2rem;
+    line-height: 1.5;
+}
+
 .test-image{
     width: 10%;
     border-radius: 100%;
@@ -357,28 +366,29 @@ h1, h2, h3, h4, h5, h6{
 }
 
 .auth-text{
-    font-size: 30px;
+    font-size: 1.2rem;
 }
 
 #press{
-    padding-bottom: 3%;
+    padding-top: 4%;
+    padding-bottom: 1%;
 }
 
 .press-logo{
     /* border-radius: 10%; */
-    width: 180px;
-    margin: 0 3% 2%;
+    width: 140px;
+    margin: 0 3% 1%;
 }
 
 .press-logo-amul{
     /* border-radius: 120%; */
-    width: 280px;
-    margin: 0 1% 2%;
+    width: 240px;
+    margin: 0 1% 1%;
 }
 .press-logo-lt{
     /* border-radius: 120%; */
-    width: 190px;
-    margin: 0 3% 2%;
+    width: 150px;
+    margin: 0 3% 1%;
 }
 
 
