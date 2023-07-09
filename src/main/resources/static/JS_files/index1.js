@@ -112,3 +112,96 @@ btnpopup.addEventListener('click', ()=>{
 iconClose.addEventListener('click', ()=>{
   wrapper.classList.remove('active-popup','active');
 });
+
+//------------------LOGIN DATA RENDERING-----------------------
+document.getElementById("login-form").addEventListener("submit", function(event) {
+  event.preventDefault(); // Prevent form submission
+
+  // Get form data
+  // const username = document.getElementById("username").value;
+  // const eateryId = document.getElementById("eatery-id").value;
+  // const eateryName = document.getElementById("eatery-name").value;
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+
+  // Create an object to hold the form data
+  const formData = {
+    // username: username,
+    // eateryId: eateryId,
+    // eateryName: eateryName,
+    email: email,
+    password: password
+  };
+
+  // Send form data to the Spring Boot backend
+  fetch("/signup", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(formData)
+  })
+  .then(response => {
+    if (response.ok) {
+      return response.json();
+    } else {
+      throw new Error("Error occurred during signup.");
+    }
+  })
+  .then(data => {
+    // Handle the server response
+    console.log(data);
+    // You can perform further actions based on the response
+  })
+  .catch(error => {
+    // Handle any errors
+    console.error(error);
+  });
+});
+
+//------------------SIGNUP DATA------------------------------
+document.getElementById("signup-form").addEventListener("submit", function(event) {
+  event.preventDefault(); // Prevent form submission
+
+  // Get form data
+  const username = document.getElementById("username").value;
+  // const eateryId = document.getElementById("eatery-id").value;
+  // const eateryName = document.getElementById("eatery-name").value;
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+
+  // Create an object to hold the form data
+  const formData = {
+    username: username,
+    // eateryId: eateryId,
+    // eateryName: eateryName,
+    email: email,
+    password: password
+  };
+
+  // Send form data to the Spring Boot backend
+  fetch("/signup", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(formData)
+  })
+  .then(response => {
+    if (response.ok) {
+      return response.json();
+    } else {
+      throw new Error("Error occurred during signup.");
+    }
+  })
+  .then(data => {
+    // Handle the server response
+    console.log(data);
+    // You can perform further actions based on the response
+  })
+  .catch(error => {
+    // Handle any errors
+    console.error(error);
+  });
+});
+
