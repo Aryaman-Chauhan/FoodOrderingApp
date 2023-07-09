@@ -1,11 +1,27 @@
 package com.daah.FoodOrdering;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.concurrent.ExecutionException;
 
 @Controller
 public class controller {
-	
+
+    //Check carefully
+   /* @PostMapping("/hdfjg")
+    public Item createItem(@RequestBody Item item) throws InterruptedException, ExecutionException {
+        return new Item(item);
+    }
+*/
+    @RequestMapping("/show")
+    @ResponseBody
+    public Item getItem(){
+        Item item = new Item("Maggi","Junk",60,"10","sddfg","kbdbf");
+        return item;
+    }
+
 	@RequestMapping("/")
     public String homePage(){
         return "index";
