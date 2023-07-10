@@ -3,37 +3,53 @@ package com.daah.FoodOrdering;
 import java.util.LinkedList;
 
 public class Vendor {
-    private String anme;
+    private String name;
+    private String email;
     private String password;
-    private String id;
-    private String shopName;
     private int noOfRating;
 
     private String shopPic;
+    private String qrCode;
     private float rating;
     private boolean openClose;
     private String location;
    /* LinkedList<Item> menu = new LinkedList<Item>();
     LinkedList<Order> vendorOrder = new LinkedList<Order>();*/
 
-    public Vendor(String anme, String password, String id, String shopName, int noOfRating, String shopPic, float rating, boolean openClose, String location) {
-        this.anme = anme;
+    public Vendor(String name, String email,String password, int noOfRating,String shopPic, String qrCode,float rating, boolean openClose, String location) {
+        this.name = name;
+        this.email = email;
         this.password = password;
-        this.id = id;
-        this.shopName = shopName;
         this.noOfRating = noOfRating;
         this.shopPic = shopPic;
         this.rating = rating;
         this.openClose = openClose;
         this.location = location;
+        this.qrCode = qrCode;
     }
 
-    public String getAnme() {
-        return anme;
+    public String getQrCode() {
+        return qrCode;
     }
 
-    public void setAnme(String anme) {
-        this.anme = anme;
+    public void setQrCode(String qrCode) {
+        this.qrCode = qrCode;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getPassword() {
@@ -42,22 +58,6 @@ public class Vendor {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getShopName() {
-        return shopName;
-    }
-
-    public void setShopName(String shopName) {
-        this.shopName = shopName;
     }
 
     public int getNoOfRating() {

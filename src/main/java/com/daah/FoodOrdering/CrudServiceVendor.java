@@ -16,7 +16,7 @@ public class CrudServiceVendor {
     public String createVendor(Vendor vendor) throws ExecutionException, InterruptedException {
         Firestore dbFirestore = FirestoreClient.getFirestore();
         System.out.println("We are in createVendor");
-        ApiFuture<WriteResult> collectionsApiFuture = dbFirestore.collection("Vendor").document(vendor.getId()).set(vendor);
+        ApiFuture<WriteResult> collectionsApiFuture = dbFirestore.collection("Vendor").document(vendor.getEmail()).set(vendor);
         return collectionsApiFuture.get().getUpdateTime().toString();
     }
 
@@ -47,7 +47,7 @@ public class CrudServiceVendor {
 
     public String updateVendor(Vendor vendor) throws ExecutionException, InterruptedException {
         Firestore dbFirestore = FirestoreClient.getFirestore();
-        ApiFuture<WriteResult> collectionsApiFuture = dbFirestore.collection("Vendor").document(vendor.getId()).set(vendor);
+        ApiFuture<WriteResult> collectionsApiFuture = dbFirestore.collection("Vendor").document(vendor.getEmail()).set(vendor);
         return collectionsApiFuture.get().getUpdateTime().toString();
     }
 }

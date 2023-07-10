@@ -44,7 +44,9 @@ public class CrudServiceStudent {
         return "Successfully deleted" + id;
     }
 
-    public String updateStudent(Student stud){
-        return "";
+    public String updateStudent(Student stud) throws ExecutionException, InterruptedException {
+        Firestore dbFirestore = FirestoreClient.getFirestore();
+        ApiFuture<WriteResult> collectionsApiFuture = dbFirestore.collection("Student").document(stud.getEmail()).set(stud);
+        return collectionsApiFuture.get().getUpdateTime().toString();
     }
 }

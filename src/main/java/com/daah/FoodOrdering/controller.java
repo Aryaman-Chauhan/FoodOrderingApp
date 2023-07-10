@@ -72,6 +72,16 @@ public class controller {
 
     }
 
+    @PutMapping("/uploadItemPic")
+    @ResponseBody
+    public void updateITEMPIC(String name,String url) throws ExecutionException, InterruptedException {
+        Item item = getCRUDITEM(name);
+        item.setItemPic(url);
+        updateCRUDITEM(item);
+        //return crudServiceItem.updateItem(item);
+
+    }
+
 
 
    //STUDENT CALLS
@@ -127,13 +137,27 @@ public class controller {
     public String deleteCRUDVENDOR(@RequestParam String id) throws InterruptedException, ExecutionException
     {return crudServiceVendor.deleteVendor(id);}
 
+    @PutMapping("/uploadVendorPic")
+    @ResponseBody
     public void updateVendorURL(String name,String url) throws ExecutionException, InterruptedException {
+
         Vendor vendor = getCRUDVENDOR(name);
         vendor.setShopPic(url);
         updateCRUDVENDOR(vendor);
         //return crudServiceItem.updateItem(item);
 
     }
+
+    @PutMapping("/uploadVendorQr")
+    @ResponseBody
+    public void updateVendorQRURL(String name,String url) throws ExecutionException, InterruptedException {
+        Vendor vendor = getCRUDVENDOR(name);
+        vendor.setQrCode(url);
+        updateCRUDVENDOR(vendor);
+        //return crudServiceItem.updateItem(item);
+
+    }
+
 
 
     //ORDER CALL
@@ -159,6 +183,8 @@ public class controller {
     @ResponseBody
     public String deleteCRUDORDER(@RequestParam String id) throws InterruptedException, ExecutionException
     {return crudServiceOrder.deleteOrder(id);}
+
+
 
 
 
@@ -219,21 +245,22 @@ public class controller {
 
 */
 
-
+//SAME FOR ALL
     @PostMapping("/uploadImage")
     @ResponseBody
-    public ResponseEntity create(@RequestParam(name = "file") MultipartFile file) {
+    public String create(@RequestParam(name = "file") MultipartFile file) {
         try {System.out.println("in Try statement");
             String fileName = firebaseFileService.saveTest(file);
             System.out.println("File name = " + fileName);// do whatever you want with that
             String url = "https://firebasestorage.googleapis.com/v0/b/oop-webapp-bits.appspot.com/o/" + fileName + "?alt=media&token=" + fileName;
+        return url;
         } catch (Exception e) {
             System.out.println(e);
         }
-        return ResponseEntity.ok().build();
+        return null;
     }
-
-    @GetMapping("/down")
+//Same for all
+    @GetMapping("/showImage")
     @ResponseBody
     public ModelAndView down(@RequestParam("name") String fam) {
         String url = "https://firebasestorage.googleapis.com/v0/b/oop-webapp-bits.appspot.com/o/" + fam + "?alt=media&token=" + fam;
@@ -245,6 +272,10 @@ public class controller {
 
     @RequestMapping("/khol")
     public String khol(){return "UmenuUser";}
+
+    @RequestMapping("/query")
+    @ResponseBody
+    public void query() throws ExecutionException, InterruptedException { crudServiceItem.getItemQuery();}
 
 }
 

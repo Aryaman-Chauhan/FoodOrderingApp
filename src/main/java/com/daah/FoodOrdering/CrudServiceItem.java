@@ -1,10 +1,7 @@
 package com.daah.FoodOrdering;
 
 import com.google.api.core.ApiFuture;
-import com.google.cloud.firestore.DocumentReference;
-import com.google.cloud.firestore.DocumentSnapshot;
-import com.google.cloud.firestore.Firestore;
-import com.google.cloud.firestore.WriteResult;
+import com.google.cloud.firestore.*;
 import com.google.firebase.cloud.FirestoreClient;
 import org.springframework.stereotype.Service;
 
@@ -46,5 +43,18 @@ public class CrudServiceItem {
         Firestore dbFirestore = FirestoreClient.getFirestore();
         ApiFuture<WriteResult> collectionsApiFuture = dbFirestore.collection("Item").document(item.getItemId()).set(item);
         return collectionsApiFuture.get().getUpdateTime().toString();
+    }
+
+    public void getItemQuery() throws ExecutionException, InterruptedException {
+        System.out.println("In query section");
+        Firestore dbFirestore = FirestoreClient.getFirestore();
+        CollectionReference itemQuery = dbFirestore.collection("Item");
+        Query query = itemQuery.whereEqualTo("type","Sweet");
+        ApiFuture<QuerySnapshot> querySnapshot = query.get();
+        System.out.println("In Last query section");
+
+       for(DocumentSnapshot document : querySnapshot.get().getDocuments())
+           System.out.println(document.getId());
+
     }
 }

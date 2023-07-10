@@ -14,7 +14,7 @@ public class Item {
     private String prepTime;
     private String itemPic;
     private String itemId;
-    private String vendorId;
+    private String vendorId; //Email of vendor
 
 
     public Item(String name, String type, float price, String prepTime, String itemPic, String itemId, String vendorId) {
@@ -23,11 +23,10 @@ public class Item {
         this.price = price;
         this.prepTime = prepTime;
         this.itemPic = itemPic;
-        this.itemId = itemId;
+        this.itemId = UUID.randomUUID().toString();
         this.vendorId = vendorId;
     }
-
-    Item(Item a){}
+Item(Item a){}
     public String getName() {
         return name;
     }
@@ -84,6 +83,4 @@ public class Item {
         this.itemId = itemId;
     }
 
-    public void showDetail(){};
-public void editItem(){};
 }

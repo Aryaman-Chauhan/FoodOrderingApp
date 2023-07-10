@@ -8,15 +8,20 @@ public class Order {
     private int status;
     private int otp;
     private int rating;
+
+    private String studId;   //Student Email
+    private String vendorId;  //Vendor Email
     //LinkedList<OrderItem> orderList;
 
 
-    public Order(float totalCost, String orderId, int status, int otp, int rating) {
+    public Order(float totalCost, String orderId, int status, int otp, int rating, String studId,String vendorId) {
         this.totalCost = totalCost;
-        this.orderId = orderId;
-        this.status = status;
-        this.otp = otp;
+        this.orderId = UUID.randomUUID().toString();
+        this.status = 0;
+        this.otp = (int) Math.random();
         this.rating = rating;
+        this.studId = studId;
+        this.vendorId = vendorId;
     }
 
     public float getTotalCost() {
@@ -29,10 +34,6 @@ public class Order {
 
     public String getOrderId() {
         return orderId;
-    }
-
-    public void setOrderId(String orderId) {
-        this.orderId = orderId;
     }
 
     public int getStatus() {
@@ -57,5 +58,21 @@ public class Order {
 
     public void setRating(int rating) {
         this.rating = rating;
+    }
+
+    public String getStudId() {
+        return studId;
+    }
+
+    public void setStudId(String studId) {
+        this.studId = studId;
+    }
+
+    public String getVendorId() {
+        return vendorId;
+    }
+
+    public void setVendorId(String vendorId) {
+        this.vendorId = vendorId;
     }
 }
