@@ -4,6 +4,7 @@ import com.google.api.core.ApiFuture;
 import com.google.cloud.firestore.*;
 import com.google.firebase.cloud.FirestoreClient;
 import org.springframework.stereotype.Service;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.concurrent.ExecutionException;
 
@@ -45,7 +46,31 @@ public class CrudServiceItem {
         return collectionsApiFuture.get().getUpdateTime().toString();
     }
 
-    public void getItemQuery() throws ExecutionException, InterruptedException {
+    public ModelAndView getItemQuery(String vendorEmail) throws ExecutionException, InterruptedException {
+        int i = 0;
+        String[] array = new String[4];
+        System.out.println("In query section");
+        Firestore dbFirestore = FirestoreClient.getFirestore();
+        CollectionReference itemQuery = dbFirestore.collection("Item");
+        Query query = itemQuery.whereEqualTo("type", "Sweet");
+        ApiFuture<QuerySnapshot> querySnapshot = query.get();
+        System.out.println("In Last query section");
+        ModelAndView mv = new ModelAndView();
+
+        for (DocumentSnapshot document : querySnapshot.get().getDocuments())
+        {System.out.println(document.getId());
+            mv.addObject("send"+String.valueOf(i),document.getId());
+            i++;
+          //  System.out.println("Value of i =" + i+ "Value of document.getId" + document.getId());
+    }
+        /*for(int j=0;j<=i;j++)
+            System.out.println(array[j]);
+        ModelAndView mv = new ModelAndView("hometest");
+        mv.addObject("array",array);
+        return mv;*/
+return mv;
+    }
+    /* public void getItemQuery() throws ExecutionException, InterruptedException {
         System.out.println("In query section");
         Firestore dbFirestore = FirestoreClient.getFirestore();
         CollectionReference itemQuery = dbFirestore.collection("Item");
@@ -56,5 +81,5 @@ public class CrudServiceItem {
        for(DocumentSnapshot document : querySnapshot.get().getDocuments())
            System.out.println(document.getId());
 
-    }
+    }*/
 }

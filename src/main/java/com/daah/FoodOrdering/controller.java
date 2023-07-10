@@ -139,7 +139,7 @@ public class controller {
 
     @PutMapping("/uploadVendorPic")
     @ResponseBody
-    public void updateVendorURL(String name,String url) throws ExecutionException, InterruptedException {
+    public void updateVendorURL(@RequestParam("name") String name,@RequestParam("url") String url) throws ExecutionException, InterruptedException {
 
         Vendor vendor = getCRUDVENDOR(name);
         vendor.setShopPic(url);
@@ -150,7 +150,7 @@ public class controller {
 
     @PutMapping("/uploadVendorQr")
     @ResponseBody
-    public void updateVendorQRURL(String name,String url) throws ExecutionException, InterruptedException {
+    public void updateVendorQRURL(@RequestParam("name") String name,@RequestParam("url") String url) throws ExecutionException, InterruptedException {
         Vendor vendor = getCRUDVENDOR(name);
         vendor.setQrCode(url);
         updateCRUDVENDOR(vendor);
@@ -273,9 +273,19 @@ public class controller {
     @RequestMapping("/khol")
     public String khol(){return "UmenuUser";}
 
-    @RequestMapping("/query")
+    @RequestMapping("/itemQuery")
     @ResponseBody
-    public void query() throws ExecutionException, InterruptedException { crudServiceItem.getItemQuery();}
+    public void itemQuery(@RequestParam String vendorEmail) throws ExecutionException, InterruptedException
+    {crudServiceItem.getItemQuery(vendorEmail);}
+
+
+    @RequestMapping("/query")
+    public ModelAndView query() throws ExecutionException, InterruptedException {
+        ModelAndView mv = crudServiceItem.getItemQuery("just test");
+        mv.setViewName("hometest");
+        return mv;
+
+    }
 
 }
 
