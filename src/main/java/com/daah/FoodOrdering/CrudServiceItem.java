@@ -63,12 +63,12 @@ public class CrudServiceItem {
             i++;
           //  System.out.println("Value of i =" + i+ "Value of document.getId" + document.getId());
     }
-        /*for(int j=0;j<=i;j++)
+return mv;
+           /*for(int j=0;j<=i;j++)
             System.out.println(array[j]);
         ModelAndView mv = new ModelAndView("hometest");
         mv.addObject("array",array);
         return mv;*/
-return mv;
     }
     /* public void getItemQuery() throws ExecutionException, InterruptedException {
         System.out.println("In query section");

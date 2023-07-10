@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="" th:href="@{https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css}">
-    <link rel="stylesheet" href="" th:href="@{css_style/studentStyle.css}">
+    <link rel="stylesheet" href="" th:href="@{/css_style/studentStyle.css}">
     <title>Order user</title>
 </head>
 <body>
@@ -14,13 +14,17 @@
             <h1>ORDER</h1>
             <h3>&mdash; Placed/Past Orders &mdash; </h3>
         </div>
-        
+        <div class="order-items">
+            <a href="">
+                <img class="shop-pic" src="/yummpy.png" th:src="@{/images/userPageImg/burger.jpg}" alt="YUMMPY'S Here" srcset="">
+            </a>
+        </div>
         <h2>Food Cart</h2>
-    <div class="food-cart">
-        <ul id="food-cart"></ul>
-        <p class="total-amount">Total Bill: ₹<span id="total-bill">0.00</span></p>
-        <button class="btn btn-primary place-order-btn" onclick="placeOrder()">Place Order</button>
-    </div>
+        <div class="food-cart">
+            <ul id="food-cart"></ul>
+            <p class="total-amount">Total Bill: ₹<span id="total-bill">0.00</span></p>
+            <button class="btn btn-primary place-order-btn" onclick="placeOrder()">Place Order</button>
+        </div>
     </div>
 
     <script src="" th:src="@{/JS_files/index1.js}"></script>
