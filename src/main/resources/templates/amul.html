@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="" th:href="@{https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css}">
+    <link rel="stylesheet" href="" th:href="@{/css_style/studentStyle.css}">
+    <title>AMUL MENU</title>
+</head>
+<body>
+    
+    <div class="menu">
+        <div class="heading">
+            <h1>Menu</h1>
+            <h3>&mdash; Order the dishes here you are craving for &mdash; </h3>
+        </div>
+
+        <!-- FOOD ITEMS -->
+        <div class="food-items">
+            <img src="" th:src="@{/images/userPageImg/butterscotch.jpg}" alt="Cup Here" srcset="">
+            <div class="details">
+                <div class="details-sub">
+                    <h5>Butterscotch Cup</h5>
+                    <h5 class="price">&#8377;29</h5>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto mollitia labore officiis, ipsum aliquam quas explicabo, dignissimos fuga facere modi similique accusamus. Debitis illo et necessitatibus exercitationem! Voluptates, accusantium saepe.</p>
+                <h5>Add/Remove Item </h5>
+                <div class="item-actions">
+                    <button class="btnl1 btn btn-secondary decrease-btn" onclick="decreaseQuantity('cup')">-</button>
+                    <div class="quantity" id="quantity-cup">0</div>
+                    <button class="btnl2 btn btn-secondary increase-btn" onclick="increaseQuantity('cup')">+</button>
+                </div>
+            </div>
+        </div>
+        <div class="food-items">
+            <img src="" th:src="@{/images/userPageImg/cone.jpg}" alt="Cone Here" srcset="">
+            <div class="details">
+                <div class="details-sub">
+                    <h5>Choco Vanilla Cone</h5>
+                    <h5 class="price">&#8377;59</h5>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto mollitia labore officiis, ipsum aliquam quas explicabo, dignissimos fuga facere modi similique accusamus. Debitis illo et necessitatibus exercitationem! Voluptates, accusantium saepe.</p>
+                <h5>Add/Remove Item </h5>
+                <div class="item-actions">
+                    <button class="btnl1 btn btn-secondary decrease-btn" onclick="decreaseQuantity('cone')">-</button>
+                    <div class="quantity" id="quantity-cone">0</div>
+                    <button class="btnl2 btn btn-secondary increase-btn" onclick="increaseQuantity('cone')">+</button>
+                </div>
+            </div>
+        </div>
+        <div class="food-items">
+            <img src="" th:src="@{/images/userPageImg/familypack.jpg}" alt="Family Pack Here" srcset="">
+            <div class="details">
+                <div class="details-sub">
+                    <h5>Chocolate Family Pack</h5>
+                    <h5 class="price">&#8377;129</h5>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto mollitia labore officiis, ipsum aliquam quas explicabo, dignissimos fuga facere modi similique accusamus. Debitis illo et necessitatibus exercitationem! Voluptates, accusantium saepe.</p>
+                <h5>Add/Remove Item </h5>
+                <div class="item-actions">
+                    <button class="btnl1 btn btn-secondary decrease-btn" onclick="decreaseQuantity('familypack')">-</button>
+                    <div class="quantity" id="quantity-familypack">0</div>
+                    <button class="btnl2 btn btn-secondary increase-btn" onclick="increaseQuantity('familypack')">+</button>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="food-items">
+            <img src="" th:src="@{/images/userPageImg/noodles.jpg}" alt="Noodles Here" srcset="">
+            <div class="details">
+                <div class="details-sub">
+                    <h5>Noodles</h5>
+                    <h5 class="price">&#8377;59</h5>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto mollitia labore officiis, ipsum aliquam quas explicabo, dignissimos fuga facere modi similique accusamus. Debitis illo et necessitatibus exercitationem! Voluptates, accusantium saepe.</p>
+                <h5>Add/Remove Item </h5>
+                <div class="item-actions">
+                    <button class="btn btn-secondary decrease-btn" onclick="decreaseQuantity('noodles')">-</button>
+                    <div class="quantity" id="quantity-noodles">0</div>
+                    <button class="btn btn-secondary increase-btn" onclick="increaseQuantity('noodles')">+</button>
+                </div>
+            </div>
+        </div>
+        <div class="food-items">
+            <img src="" th:src="@{/images/userPageImg/pizza.jpg}" alt="Pizza Here" srcset="">
+            <div class="details">
+                <div class="details-sub">
+                    <h5>Pizza</h5>
+                    <h5 class="price">&#8377;119</h5>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto mollitia labore officiis, ipsum aliquam quas explicabo, dignissimos fuga facere modi similique accusamus. Debitis illo et necessitatibus exercitationem! Voluptates, accusantium saepe.</p>
+                <h5>Add/Remove Item </h5>
+                <div class="item-actions">
+                    <button class="btn btn-secondary decrease-btn" onclick="decreaseQuantity('pizza')">-</button>
+                    <div class="quantity" id="quantity-pizza">0</div>
+                    <button class="btn btn-secondary increase-btn" onclick="increaseQuantity('pizza')">+</button>
+                </div>
+            </div>
+        </div>
+        <div class="food-items">
+            <img src="" th:src="@{/images/userPageImg/ppori.jpg}" alt="Poori Here" srcset="">
+            <div class="details">
+                <div class="details-sub">
+                    <h5>Poori</h5>
+                    <h5 class="price">&#8377;99</h5>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto mollitia labore officiis, ipsum aliquam quas explicabo, dignissimos fuga facere modi similique accusamus. Debitis illo et necessitatibus exercitationem! Voluptates, accusantium saepe.</p>
+                <h5>Add/Remove Item </h5>
+                <div class="item-actions">
+                    <button class="btn btn-secondary decrease-btn" onclick="decreaseQuantity('poori')">-</button>
+                    <div class="quantity" id="quantity-poori">0</div>
+                    <button class="btn btn-secondary increase-btn" onclick="increaseQuantity('poori')">+</button>
+                </div>
+            </div>
+        </div>
+        <div class="food-items">
+            <img src="" th:src="@{/images/userPageImg/sandwich.jpg}" alt="Sandwich Here" srcset="">
+            <div class="details">
+                <div class="details-sub">
+                    <h5>Sandwich</h5>
+                    <h5 class="price">&#8377;59</h5>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto mollitia labore officiis, ipsum aliquam quas explicabo, dignissimos fuga facere modi similique accusamus. Debitis illo et necessitatibus exercitationem! Voluptates, accusantium saepe.</p>
+                <h5>Add/Remove Item </h5>
+                <div class="item-actions">
+                    <button class="btn btn-secondary decrease-btn" onclick="decreaseQuantity('sandwich')">-</button>
+                    <div class="quantity" id="quantity-sandwich">0</div>
+                    <button class="btn btn-secondary increase-btn" onclick="increaseQuantity('sandwich')">+</button>
+                </div>
+            </div>
+        </div>
+        <div class="food-items">
+            <img src="" th:src="@{/images/userPageImg/soup.jpg}" alt="Soup Here" srcset="">
+            <div class="details">
+                <div class="details-sub">
+                    <h5>Soup</h5>
+                    <h5 class="price">&#8377;89</h5>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto mollitia labore officiis, ipsum aliquam quas explicabo, dignissimos fuga facere modi similique accusamus. Debitis illo et necessitatibus exercitationem! Voluptates, accusantium saepe.</p>
+                <h5>Add/Remove Item </h5>
+                <div class="item-actions">
+                    <button class="btn btn-secondary decrease-btn" onclick="decreaseQuantity('soup')">-</button>
+                    <div class="quantity" id="quantity-soup">0</div>
+                    <button class="btn btn-secondary increase-btn" onclick="increaseQuantity('soup')">+</button>
+                </div>
+            </div>
+        </div>  -->
+    </div>
+
+    <!-- FOOD CART -->
+    <br><br><br>
+    <div class="heading head">
+        <h1>Food Cart</h1>
+        <h3>&mdash; All your ORDER ACTIVITY appear here! &mdash; </h3>
+    </div>
+    <div class="food-cart">
+        <ul id="food-cart"></ul>
+        <p class="total-amount">Total Bill: ₹<span id="total-bill">0.00</span></p>
+        <button class="btn btn-primary place-order-btn" onclick="placeOrder()">Place Order</button>
+    </div>
+
+    <script src="" th:src="@{/JS_files/index1.js}"></script>
+    <script src="" th:src="@{https://code.jquery.com/jquery-3.5.1.slim.min.js}"></script>
+    <script src="" th:src="@{https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/js/bootstrap.min.js}"></script>
+
+    
+</body>
+</html>
