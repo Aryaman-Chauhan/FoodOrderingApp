@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="" th:href="@{https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css}">
     <link rel="stylesheet" href="" th:href="@{/css_style/studentStyle.css}">
-    <title>Menu user</title>
+    <title>AMUL MENU</title>
 </head>
 <body>
     
@@ -17,54 +17,54 @@
 
         <!-- FOOD ITEMS -->
         <div class="food-items">
-            <img src="" th:src="@{/images/userPageImg/burger.jpg}" alt="Burger Here" srcset="">
+            <img src="" th:src="@{/images/userPageImg/butterscotch.jpg}" alt="Cup Here" srcset="">
             <div class="details">
                 <div class="details-sub">
-                    <h5>Burger</h5>
+                    <h5>Butterscotch Cup</h5>
+                    <h5 class="price">&#8377;29</h5>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto mollitia labore officiis, ipsum aliquam quas explicabo, dignissimos fuga facere modi similique accusamus. Debitis illo et necessitatibus exercitationem! Voluptates, accusantium saepe.</p>
+                <h5>Add/Remove Item </h5>
+                <div class="item-actions">
+                    <button class="btnl1 btn btn-secondary decrease-btn" onclick="decreaseQuantity('cup')">-</button>
+                    <div class="quantity" id="quantity-cup">0</div>
+                    <button class="btnl2 btn btn-secondary increase-btn" onclick="increaseQuantity('cup')">+</button>
+                </div>
+            </div>
+        </div>
+        <div class="food-items">
+            <img src="" th:src="@{/images/userPageImg/cone.jpg}" alt="Cone Here" srcset="">
+            <div class="details">
+                <div class="details-sub">
+                    <h5>Choco Vanilla Cone</h5>
                     <h5 class="price">&#8377;59</h5>
                 </div>
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto mollitia labore officiis, ipsum aliquam quas explicabo, dignissimos fuga facere modi similique accusamus. Debitis illo et necessitatibus exercitationem! Voluptates, accusantium saepe.</p>
                 <h5>Add/Remove Item </h5>
                 <div class="item-actions">
-                    <button class="btn btn-secondary decrease-btn" onclick="decreaseQuantity('burger')">-</button>
-                    <div class="quantity" id="quantity-burger">0</div>
-                    <button class="btn btn-secondary increase-btn" onclick="increaseQuantity('burger')">+</button>
+                    <button class="btnl1 btn btn-secondary decrease-btn" onclick="decreaseQuantity('cone')">-</button>
+                    <div class="quantity" id="quantity-cone">0</div>
+                    <button class="btnl2 btn btn-secondary increase-btn" onclick="increaseQuantity('cone')">+</button>
                 </div>
             </div>
         </div>
         <div class="food-items">
-            <img src="" th:src="@{/images/userPageImg/chillipotato.jpg}" alt="chilli Potato Here" srcset="">
+            <img src="" th:src="@{/images/userPageImg/familypack.jpg}" alt="Family Pack Here" srcset="">
             <div class="details">
                 <div class="details-sub">
-                    <h5>Chilli Potato</h5>
-                    <h5 class="price">&#8377;99</h5>
+                    <h5>Chocolate Family Pack</h5>
+                    <h5 class="price">&#8377;129</h5>
                 </div>
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto mollitia labore officiis, ipsum aliquam quas explicabo, dignissimos fuga facere modi similique accusamus. Debitis illo et necessitatibus exercitationem! Voluptates, accusantium saepe.</p>
                 <h5>Add/Remove Item </h5>
                 <div class="item-actions">
-                    <button class="btn btn-secondary decrease-btn" onclick="decreaseQuantity('chilliPotato')">-</button>
-                    <div class="quantity" id="quantity-chilliPotato">0</div>
-                    <button class="btn btn-secondary increase-btn" onclick="increaseQuantity('chilliPotato')">+</button>
+                    <button class="btnl1 btn btn-secondary decrease-btn" onclick="decreaseQuantity('familypack')">-</button>
+                    <div class="quantity" id="quantity-familypack">0</div>
+                    <button class="btnl2 btn btn-secondary increase-btn" onclick="increaseQuantity('familypack')">+</button>
                 </div>
             </div>
         </div>
-        <div class="food-items">
-            <img src="" th:src="@{/images/userPageImg/dosa.jpg}" alt="Dosa Here" srcset="">
-            <div class="details">
-                <div class="details-sub">
-                    <h5>Dosa</h5>
-                    <h5 class="price">&#8377;89</h5>
-                </div>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto mollitia labore officiis, ipsum aliquam quas explicabo, dignissimos fuga facere modi similique accusamus. Debitis illo et necessitatibus exercitationem! Voluptates, accusantium saepe.</p>
-                <h5>Add/Remove Item </h5>
-                <div class="item-actions">
-                    <button class="btn btn-secondary decrease-btn" onclick="decreaseQuantity('dosa')">-</button>
-                    <div class="quantity" id="quantity-dosa">0</div>
-                    <button class="btn btn-secondary increase-btn" onclick="increaseQuantity('dosa')">+</button>
-                </div>
-            </div>
-        </div>
-        <div class="food-items">
+        <!-- <div class="food-items">
             <img src="" th:src="@{/images/userPageImg/noodles.jpg}" alt="Noodles Here" srcset="">
             <div class="details">
                 <div class="details-sub">
@@ -143,12 +143,15 @@
                     <button class="btn btn-secondary increase-btn" onclick="increaseQuantity('soup')">+</button>
                 </div>
             </div>
-        </div> 
+        </div>  -->
     </div>
 
     <!-- FOOD CART -->
     <br><br><br>
-    <h2 class="cart" >Food Cart</h2>
+    <div class="heading head">
+        <h1>Food Cart</h1>
+        <h3>&mdash; All your ORDER ACTIVITY appear here! &mdash; </h3>
+    </div>
     <div class="food-cart">
         <ul id="food-cart"></ul>
         <p class="total-amount">Total Bill: ₹<span id="total-bill">0.00</span></p>

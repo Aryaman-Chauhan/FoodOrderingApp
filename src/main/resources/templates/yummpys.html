@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="" th:href="@{https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css}">
     <link rel="stylesheet" href="" th:href="@{/css_style/studentStyle.css}">
-    <title>Menu user</title>
+    <title>YUMMPY'S MENU</title>
 </head>
 <body>
     
@@ -16,7 +16,7 @@
         </div>
 
         <!-- FOOD ITEMS -->
-        <div class="food-items">
+        <!-- <div class="food-items">
             <img src="" th:src="@{/images/userPageImg/burger.jpg}" alt="Burger Here" srcset="">
             <div class="details">
                 <div class="details-sub">
@@ -31,7 +31,7 @@
                     <button class="btn btn-secondary increase-btn" onclick="increaseQuantity('burger')">+</button>
                 </div>
             </div>
-        </div>
+        </div> -->
         <div class="food-items">
             <img src="" th:src="@{/images/userPageImg/chillipotato.jpg}" alt="chilli Potato Here" srcset="">
             <div class="details">
@@ -42,13 +42,13 @@
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto mollitia labore officiis, ipsum aliquam quas explicabo, dignissimos fuga facere modi similique accusamus. Debitis illo et necessitatibus exercitationem! Voluptates, accusantium saepe.</p>
                 <h5>Add/Remove Item </h5>
                 <div class="item-actions">
-                    <button class="btn btn-secondary decrease-btn" onclick="decreaseQuantity('chilliPotato')">-</button>
+                    <button class="btnl1 btn btn-secondary decrease-btn" onclick="decreaseQuantity('chilliPotato')">-</button>
                     <div class="quantity" id="quantity-chilliPotato">0</div>
-                    <button class="btn btn-secondary increase-btn" onclick="increaseQuantity('chilliPotato')">+</button>
+                    <button class="btnl2 btn btn-secondary increase-btn" onclick="increaseQuantity('chilliPotato')">+</button>
                 </div>
             </div>
         </div>
-        <div class="food-items">
+        <!-- <div class="food-items">
             <img src="" th:src="@{/images/userPageImg/dosa.jpg}" alt="Dosa Here" srcset="">
             <div class="details">
                 <div class="details-sub">
@@ -63,7 +63,7 @@
                     <button class="btn btn-secondary increase-btn" onclick="increaseQuantity('dosa')">+</button>
                 </div>
             </div>
-        </div>
+        </div> -->
         <div class="food-items">
             <img src="" th:src="@{/images/userPageImg/noodles.jpg}" alt="Noodles Here" srcset="">
             <div class="details">
@@ -74,13 +74,13 @@
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto mollitia labore officiis, ipsum aliquam quas explicabo, dignissimos fuga facere modi similique accusamus. Debitis illo et necessitatibus exercitationem! Voluptates, accusantium saepe.</p>
                 <h5>Add/Remove Item </h5>
                 <div class="item-actions">
-                    <button class="btn btn-secondary decrease-btn" onclick="decreaseQuantity('noodles')">-</button>
+                    <button class="btnl1 btn btn-secondary decrease-btn" onclick="decreaseQuantity('noodles')">-</button>
                     <div class="quantity" id="quantity-noodles">0</div>
-                    <button class="btn btn-secondary increase-btn" onclick="increaseQuantity('noodles')">+</button>
+                    <button class="btnl2 btn btn-secondary increase-btn" onclick="increaseQuantity('noodles')">+</button>
                 </div>
             </div>
         </div>
-        <div class="food-items">
+        <!-- <div class="food-items">
             <img src="" th:src="@{/images/userPageImg/pizza.jpg}" alt="Pizza Here" srcset="">
             <div class="details">
                 <div class="details-sub">
@@ -111,7 +111,7 @@
                     <button class="btn btn-secondary increase-btn" onclick="increaseQuantity('poori')">+</button>
                 </div>
             </div>
-        </div>
+        </div> -->
         <div class="food-items">
             <img src="" th:src="@{/images/userPageImg/sandwich.jpg}" alt="Sandwich Here" srcset="">
             <div class="details">
@@ -122,13 +122,13 @@
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto mollitia labore officiis, ipsum aliquam quas explicabo, dignissimos fuga facere modi similique accusamus. Debitis illo et necessitatibus exercitationem! Voluptates, accusantium saepe.</p>
                 <h5>Add/Remove Item </h5>
                 <div class="item-actions">
-                    <button class="btn btn-secondary decrease-btn" onclick="decreaseQuantity('sandwich')">-</button>
+                    <button class="btnl1 btn btn-secondary decrease-btn" onclick="decreaseQuantity('sandwich')">-</button>
                     <div class="quantity" id="quantity-sandwich">0</div>
-                    <button class="btn btn-secondary increase-btn" onclick="increaseQuantity('sandwich')">+</button>
+                    <button class="btnl2 btn btn-secondary increase-btn" onclick="increaseQuantity('sandwich')">+</button>
                 </div>
             </div>
         </div>
-        <div class="food-items">
+        <!-- <div class="food-items">
             <img src="" th:src="@{/images/userPageImg/soup.jpg}" alt="Soup Here" srcset="">
             <div class="details">
                 <div class="details-sub">
@@ -143,12 +143,15 @@
                     <button class="btn btn-secondary increase-btn" onclick="increaseQuantity('soup')">+</button>
                 </div>
             </div>
-        </div> 
+        </div>  -->
     </div>
 
     <!-- FOOD CART -->
     <br><br><br>
-    <h2 class="cart" >Food Cart</h2>
+    <div class="heading head">
+        <h1>Food Cart</h1>
+        <h3>&mdash; All your ORDER ACTIVITY appear here! &mdash; </h3>
+    </div>
     <div class="food-cart">
         <ul id="food-cart"></ul>
         <p class="total-amount">Total Bill: ₹<span id="total-bill">0.00</span></p>

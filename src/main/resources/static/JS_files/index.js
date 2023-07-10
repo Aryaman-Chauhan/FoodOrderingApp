@@ -204,3 +204,38 @@ document.getElementById("login-form").addEventListener("submit", function(event)
   });
 });
 
+// -----------------------ADD ITEM DATA------------------------
+document.getElementById("item-form").addEventListener("submit", function(event) {
+  event.preventDefault(); // Prevent form submission
+
+  // Retrieve form values
+  const itemName = document.getElementById("item-name").value;
+  const itemPrice = document.getElementById("item-price").value;
+  const itemDescription = document.getElementById("item-description").value;
+  const itemPhoto = document.getElementById("item-photo").files[0];
+
+  // Perform validation if needed
+
+  // Prepare form data to send to the server
+  const formData = new FormData();
+  formData.append("itemName", itemName);
+  formData.append("itemPrice", itemPrice);
+  formData.append("itemDescription", itemDescription);
+  formData.append("itemPhoto", itemPhoto);
+
+  // Send the form data to the server (replace with your endpoint URL)
+  fetch("your-server-endpoint", {
+    method: "POST",
+    body: formData
+  })
+    .then(response => response.json())
+    .then(data => {
+      // Handle the response from the server
+      console.log(data);
+      // Display a success message or perform any additional actions
+    })
+    .catch(error => {
+      // Handle any errors
+      console.error(error);
+    });
+});

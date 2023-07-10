@@ -10,6 +10,9 @@ var itemPrices = {
   'poori': 99,
   'sandwich': 59,
   'soup': 89,
+  'cup': 29,
+  'cone': 59,
+  'familypack': 129,
 };
 
 function capitalizeFirstLetter(string) {
