@@ -2,10 +2,11 @@ package com.daah.FoodOrdering;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.stereotype.Service;
 
+import java.util.LinkedList;
 import java.util.UUID;
-
 public class Item {
     private String name;
     private String type;
@@ -13,24 +14,34 @@ public class Item {
     private String prepTime;
     private String itemPic;
     private String itemId;
+    private String vendorId;
 
-    public Item(String name, String type, float price, String prepTime, String itemPic, String itemId) {
+
+    public Item(String name, String type, float price, String prepTime, String itemPic, String itemId, String vendorId) {
         this.name = name;
         this.type = type;
         this.price = price;
         this.prepTime = prepTime;
         this.itemPic = itemPic;
         this.itemId = itemId;
+        this.vendorId = vendorId;
     }
 
     Item(Item a){}
-
     public String getName() {
         return name;
     }
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getVendorId() {
+        return vendorId;
+    }
+
+    public void setVendorId(String vendorId) {
+        this.vendorId = vendorId;
     }
 
     public String getType() {
