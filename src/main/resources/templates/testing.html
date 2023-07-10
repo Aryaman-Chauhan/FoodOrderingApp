@@ -1,14 +1,23 @@
-<!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://thymeleaf.org">
+
 <head>
-    <title>Title</title>
+    <title>My Webpage</title>
+    <!-- Include the Firebase JavaScript SDK -->
+    <script th:src="@{https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js}"></script>
+    <script th:src="@{https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js}"></script>
 </head>
 <body>
-<div>Web Application. Passed parameter : <span th:text="${obj}"></span></div>
-<form action = "addalien">
-    <input type="text" name="aid"><br>
-    <input type="submit" name="final"><br>
-</form>
+<h1>Query Results:</h1>
+
+<!-- Display the query results here -->
+<div id="outer">
+<div id="inner">
+<div id="testing"></div>
+</div>
+</div>
+<!-- Include the JavaScript file -->
+<script th:src="@{/JS_files/Testing.js}"></script>
+
 </body>
 </html>
-

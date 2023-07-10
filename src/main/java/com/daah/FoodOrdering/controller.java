@@ -193,44 +193,81 @@ public class controller {
     public String homePage(){
         return "index";
     }
-	
-    @RequestMapping("/Eeat")
+    @RequestMapping("/amul")
+    public String amulPage(){
+        return "amul";
+    }
+
+    @RequestMapping("/contactUs")
+    public String contactUsPage(){
+        return "contactUs";
+    }
+
+    @RequestMapping("/eateryAddItem")
+    public String eateryAddItem() {
+        return "eateryAddItem";
+    }
+
+
+
+    @RequestMapping("/Eeateries")
     public String eatery() {
     	return "Eeateries";
     }
         
-    @RequestMapping("/Emenu")
+    @RequestMapping("/EmenuEateries")
     public String menuEatery() {
     	return "EmenuEateries";
     }
     
-    @RequestMapping("/Eorder")
+    @RequestMapping("/EorderEateries")
     public String orderEatery() {
     	return "EorderEateries";
     }
-    
-    @RequestMapping("/Ustud")
-    public String student() {
+
+    @RequestMapping("/looters")
+    public String looters() {
+        return "looters";
+    }
+    @RequestMapping("/shopList")
+    public String shopList() {
+        return "shopList";
+    }
+    @RequestMapping("/tott")
+    public String tott() {
+        return "tott";
+    }
+    @RequestMapping("/UmenuUser")
+    public String menuStudent() {
+        return "UmenuUser";
+    }
+
+    @RequestMapping("/UorderUser")
+    public String UorderUser() {
+        return "UorderUser";
+    }
+
+    @RequestMapping("/Ustudent")
+    public String Ustudent() {
     	return "Ustudent";
 	}
-    
-    @RequestMapping("/Uorder")
-    public String orderStudent() {
-    	return "UorderUser";
+
+    @RequestMapping("/yummpys")
+    public String yummpys() {
+        return "yummpys";
     }
     
-    @RequestMapping("/Umenu")
-    public String menuStudent() {
-    	return "UmenuUser";
-    }
+
+
 
 
       @RequestMapping("/testing")
-    public ModelAndView gettest(HttpSession session){
-       String name = "hello";
+    public String gettest(HttpSession session){
+       /*String name = "hello";
         ModelAndView mv = new ModelAndView();
         mv.addObject("obj",name);
-        return mv;
+        return mv;*/
+          return "testing";
     }
 
 
@@ -279,13 +316,13 @@ public class controller {
     {crudServiceItem.getItemQuery(vendorEmail);}
 
 
-    @RequestMapping("/query")
+    /*@RequestMapping("/query")
     public ModelAndView query() throws ExecutionException, InterruptedException {
         ModelAndView mv = crudServiceItem.getItemQuery("just test");
-        mv.setViewName("hometest");
+        mv.setViewName("testing");
         return mv;
+    }*/
 
-    }
 
 }
 
