@@ -6,14 +6,14 @@ public class Student {
     private String name;
     private String email;
     private String pass;
-    private String ID;
     //LinkedList<Order> orders = new LinkedList<Order>();
-Student(String email, String pass)
-{this.email = email;
-    this.pass = pass;
-    this.name = null;
-    this.ID = null;
-}
+
+    public Student(String name, String email, String pass) {
+        this.name = name;
+        this.email = email;
+        this.pass = pass;
+    }
+
     public String getName() {
         return name;
     }
@@ -26,13 +26,6 @@ Student(String email, String pass)
         this.pass = pass;
     }
 
-    public String getID() {
-        return ID;
-    }
-
-    public void setID(String ID) {
-        this.ID = ID;
-    }
 
     public void setName(String name) {
         this.name = name;

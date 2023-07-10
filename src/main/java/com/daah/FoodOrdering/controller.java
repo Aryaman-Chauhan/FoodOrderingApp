@@ -19,11 +19,11 @@ import java.util.concurrent.ExecutionException;
 
 @Controller
 public class controller {
-    CrudServiceItem crudServiceItem = new CrudServiceItem();
-    CrudServiceVendor crudServiceVendor = new CrudServiceVendor();
-    CrudServiceStudent crudServiceStudent = new CrudServiceStudent();
-    CrudServiceOrder crudServiceOrder = new CrudServiceOrder();
-    FirebaseFileService firebaseFileService = new FirebaseFileService();
+    CrudServiceItem crudServiceItem;
+    CrudServiceVendor crudServiceVendor;
+    CrudServiceStudent crudServiceStudent;
+    CrudServiceOrder crudServiceOrder;
+    FirebaseFileService firebaseFileService;
 
     public controller(CrudServiceItem crudServiceItem, CrudServiceVendor crudServiceVendor, CrudServiceStudent crudServiceStudent, CrudServiceOrder crudServiceOrder, FirebaseFileService firebaseFileService) {
         this.crudServiceItem = crudServiceItem;
@@ -32,12 +32,6 @@ public class controller {
         this.crudServiceOrder = crudServiceOrder;
         this.firebaseFileService = firebaseFileService;
     }
-//Check carefully
-   /* @PostMapping("/hdfjg")
-    public Item createItem(@RequestBody Item item) throws InterruptedException, ExecutionException {
-        return new Item(item);
-    }
-*/
 
 
     @RequestMapping("/endpoint")
@@ -45,7 +39,7 @@ public class controller {
 
 
 
-
+//ITEM CALLS
 
     @PostMapping("/createItem")
     @ResponseBody
@@ -70,21 +64,27 @@ public class controller {
     public String deleteCRUDITEM(@RequestParam String id) throws InterruptedException, ExecutionException
     {return crudServiceItem.deleteItem(id);}
 
+     public void updateItemURL(String name,String url) throws ExecutionException, InterruptedException {
+        Item item = getCRUDITEM(name);
+        item.setItemPic(url);
+        updateCRUDITEM(item);
+        //return crudServiceItem.updateItem(item);
+
+    }
 
 
 
-
-
+   //STUDENT CALLS
 
     @PostMapping("/createStudent")
     @ResponseBody
-    public String createCRUDSTUD(@RequestParam String email, @RequestParam String pass) throws InterruptedException, ExecutionException
-    {Student stud = new Student(email,pass);
+    public String createCRUDSTUD(@RequestBody Student stud) throws InterruptedException, ExecutionException
+    {System.out.println("Email is = " + stud.getEmail() +"\n Name is = "+ stud.getName()+"\n Pass is = "+stud.getPass());
         return crudServiceStudent.createStudent(stud);}
 
     @GetMapping("/getStudent")
     @ResponseBody
-    public String getCRUDSTUD(@RequestParam String id) throws InterruptedException, ExecutionException
+    public Student getCRUDSTUD(@RequestParam String id) throws InterruptedException, ExecutionException
     {return crudServiceStudent.getStudent(id);
     }
 
@@ -103,12 +103,67 @@ public class controller {
 
 
 
+ //VENDOR CALL
+
+    @PostMapping("/createVendor")
+    @ResponseBody
+    public String createCRUDVENDOR(@RequestBody Vendor vendor) throws InterruptedException, ExecutionException
+    {return crudServiceVendor.createVendor(vendor);}
+    @GetMapping(value = "/getVendor")
+    @ResponseBody
+    public Vendor getCRUDVENDOR(@RequestParam String id) throws InterruptedException, ExecutionException
+    {
+        Vendor vendor = crudServiceVendor.getVendor(id);
+        return vendor;
+    }
+
+    @PutMapping("/updateVendor")
+    @ResponseBody
+    public String updateCRUDVENDOR(@RequestBody Vendor vendor) throws InterruptedException, ExecutionException
+    {return crudServiceVendor.updateVendor(vendor);}
+
+    @PutMapping("/deleteVendor")
+    @ResponseBody
+    public String deleteCRUDVENDOR(@RequestParam String id) throws InterruptedException, ExecutionException
+    {return crudServiceVendor.deleteVendor(id);}
+
+    public void updateVendorURL(String name,String url) throws ExecutionException, InterruptedException {
+        Vendor vendor = getCRUDVENDOR(name);
+        vendor.setShopPic(url);
+        updateCRUDVENDOR(vendor);
+        //return crudServiceItem.updateItem(item);
+
+    }
+
+
+    //ORDER CALL
+
+    @PostMapping("/createOrder")
+    @ResponseBody
+    public String createCRUDORDER(@RequestBody Order order) throws InterruptedException, ExecutionException
+    {return crudServiceOrder.createOrder(order);}
+    @GetMapping(value = "/getOrder")
+    @ResponseBody
+    public Order getCRUDORDER(@RequestParam String id) throws InterruptedException, ExecutionException
+    {
+        Order order = crudServiceOrder.getOrder(id);
+        return order;
+    }
+
+    @PutMapping("/updateOrder")
+    @ResponseBody
+    public String updateCRUDORDER(@RequestBody Order order) throws InterruptedException, ExecutionException
+    {return crudServiceOrder.updateOrder(order);}
+
+    @PutMapping("/deleteOrder")
+    @ResponseBody
+    public String deleteCRUDORDER(@RequestParam String id) throws InterruptedException, ExecutionException
+    {return crudServiceOrder.deleteOrder(id);}
 
 
 
 
-
-	@RequestMapping("/")
+    @RequestMapping("/")
     public String homePage(){
         return "index";
     }
@@ -152,6 +207,8 @@ public class controller {
         return mv;
     }
 
+
+    /*
     @RequestMapping("/addalien")
     public ModelAndView gt(@RequestParam("aid") String myname){
         System.out.println(myname);
@@ -160,7 +217,7 @@ public class controller {
         return mv;
     }
 
-
+*/
 
 
     @PostMapping("/uploadImage")
@@ -169,6 +226,7 @@ public class controller {
         try {System.out.println("in Try statement");
             String fileName = firebaseFileService.saveTest(file);
             System.out.println("File name = " + fileName);// do whatever you want with that
+            String url = "https://firebasestorage.googleapis.com/v0/b/oop-webapp-bits.appspot.com/o/" + fileName + "?alt=media&token=" + fileName;
         } catch (Exception e) {
             System.out.println(e);
         }
@@ -181,19 +239,12 @@ public class controller {
         String url = "https://firebasestorage.googleapis.com/v0/b/oop-webapp-bits.appspot.com/o/" + fam + "?alt=media&token=" + fam;
         ModelAndView mv = new ModelAndView("hometest");
         mv.addObject("url",url);
+        mv.addObject("vendorname","rahul");
         return mv;
-        /*
-        try {System.out.println("in download Try statement");
-            System.out.println("File name = " + fam);
-            String fileName = firebaseFileService.download(String.valueOf(fam));
-            System.out.println("File name = " + fam);// do whatever you want with that
-        } catch (Exception e) {
-            System.out.println(e);
-        }
-        return "help me";*/
     }
 
-
+    @RequestMapping("/khol")
+    public String khol(){return "UmenuUser";}
 
 }
 
