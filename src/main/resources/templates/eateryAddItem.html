@@ -11,26 +11,35 @@
 
     <div class="add-con container">
         <h2>Add New Item</h2>
-        <form id="item-form">
-        <div class="form-group">
+        <form id="item-form" method="post" th:action="@{/}">
+          <div class="form-group">
             <label for="item-name">Item Name</label>
             <input type="text" id="item-name" class="form-control" required>
-        </div>
-        <div class="form-group">
+          </div>
+          <div class="form-group">
             <label for="item-price">Item Price (&#8377;)</label>
             <input type="text" id="item-price" class="form-control" pattern="[0-9]+" required>
-        </div>
-        <div class="form-group">
+          </div>
+          <div class="form-group">
+            <label for="item-type">Item Type</label>
+            <input type="text" id="item-type" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label for="prep-time">Preparation Time</label>
+            <input type="text" id="prep-time" class="form-control" required>
+          </div>
+          <!-- <div class="form-group">
             <label for="item-description">Item Description</label>
-            <textarea id="item-description" class="item-des form-control" required></textarea>
-        </div>
-        <div class="form-group">
+            <textarea id="item-description" class="form-control" required></textarea>
+          </div> -->
+          <div class="form-group">
             <label for="item-photo">Item Photo</label>
             <input type="file" id="item-photo" class="form-control-file" accept="image/*" required>
-        </div>
-        <button type="submit" class="btn btn-primary">Add Item</button>
+          </div>
+          <button type="submit" class="btn btn-primary">Add Item</button>
         </form>
-    </div>
+      </div>
+      
 
     <script src="" th:src="@{/JS_files/index.js}"></script>
     <script src="" th:src="@{https://code.jquery.com/jquery-3.5.1.slim.min.js}"></script>

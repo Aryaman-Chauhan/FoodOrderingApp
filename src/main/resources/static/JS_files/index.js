@@ -122,23 +122,23 @@ document.getElementById("signup-form").addEventListener("submit", function(event
   event.preventDefault(); // Prevent form submission
 
   // Get form data
-  const username = document.getElementById("username").value;
+  const name = document.getElementById("name").value;
   const eateryId = document.getElementById("eatery-id").value;
-  const eateryName = document.getElementById("eatery-name").value;
+  const location = document.getElementById("eatery-name").value;
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
 
   // Create an object to hold the form data
   const formData = {
-    username: username,
+    name: name,
     eateryId: eateryId,
-    eateryName: eateryName,
+    location: location,
     email: email,
     password: password
   };
 
   // Send form data to the Spring Boot backend
-  fetch("/signup", {
+  fetch("/createVendor", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
@@ -179,8 +179,8 @@ document.getElementById("login-form").addEventListener("submit", function(event)
   };
 
   // Send form data to the Spring Boot backend
-  fetch("/login", {
-    method: "POST",
+  fetch("/getVendor", {
+    method: "GET",
     headers: {
       "Content-Type": "application/json"
     },
@@ -205,13 +205,34 @@ document.getElementById("login-form").addEventListener("submit", function(event)
 });
 
 // -----------------------ADD ITEM DATA------------------------
+function uploadFile(file) {
+  const formData = new FormData();
+  formData.append('file', file);
+
+  return fetch('/uploadImageItem', {
+    method: 'POST',
+    body: formData
+  })
+  .then(response => response.json())
+  .then(data => {
+    // Handle the response from the server
+    console.log(data);
+    // Display a success message or perform any additional actions
+  })
+  .catch(error => {
+    // Handle any errors
+    console.error(error);
+  });
+}
+
 document.getElementById("item-form").addEventListener("submit", function(event) {
   event.preventDefault(); // Prevent form submission
 
   // Retrieve form values
   const itemName = document.getElementById("item-name").value;
   const itemPrice = document.getElementById("item-price").value;
-  const itemDescription = document.getElementById("item-description").value;
+  const itemType = document.getElementById("item-type").value;
+  const prepTime = document.getElementById("prep-time").value;
   const itemPhoto = document.getElementById("item-photo").files[0];
 
   // Perform validation if needed
@@ -220,11 +241,11 @@ document.getElementById("item-form").addEventListener("submit", function(event) 
   const formData = new FormData();
   formData.append("itemName", itemName);
   formData.append("itemPrice", itemPrice);
-  formData.append("itemDescription", itemDescription);
-  formData.append("itemPhoto", itemPhoto);
+  formData.append("itemType", itemType);
+  formData.append("prepTime", prepTime);
 
   // Send the form data to the server (replace with your endpoint URL)
-  fetch("your-server-endpoint", {
+  fetch("/createItem", {
     method: "POST",
     body: formData
   })
@@ -233,6 +254,9 @@ document.getElementById("item-form").addEventListener("submit", function(event) 
       // Handle the response from the server
       console.log(data);
       // Display a success message or perform any additional actions
+
+      // Upload the file separately
+      uploadFile(itemPhoto);
     })
     .catch(error => {
       // Handle any errors

@@ -42,16 +42,16 @@
         
                         <ul class="navbar-nav ms-auto">
                           <li class="nav-item">
-                            <a class="nav-link" href="" th:href="@{Emenu}">Menu</a>
+                            <a class="nav-link" href="" th:href="@{EmenuEateries}">Menu</a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link" href="" th:href="@{Eorder}">Order</a>
+                            <a class="nav-link" href="" th:href="@{EorderEateries}">Order</a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link" href="" th:href="@{Eeat#reviews}">Reviews</a>
+                            <a class="nav-link" href="" th:href="@{Eeateries#reviews}">Reviews</a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link" href="" th:href="@{Eeat#cta}">Contact Us</a>
+                            <a class="nav-link" href="" th:href="@{contactUs}">Contact Us</a>
                           </li>
                           <li class="nav-item">
                             <button type="button" class="btnLogin-popup btn download-button">Login</button>
@@ -166,7 +166,9 @@
         <div class="menu-item">
           <h3>Add New Item</h3>
           <div class="actions">
-            <button class="btn btn-success add-btn">Add Item</button>
+            <a href="" th:href="@{eateryAddItem}">
+                <button class="btn btn-success add-btn">Add Item</button>
+            </a>
           </div>
         </div>
       </div>

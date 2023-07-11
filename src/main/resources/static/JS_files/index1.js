@@ -1,3 +1,20 @@
+//Initialize Firebase with your project credentials
+
+var firebaseConfig = {
+  apiKey: "AIzaSyCWhO6lkeL003HhucHFcAyE5ApWNPrToEA",
+  authDomain: "oop-webapp-bits.firebaseapp.com",
+  databaseURL: "https://oop-webapp-bits-default-rtdb.firebaseio.com",
+  projectId: "oop-webapp-bits",
+  storageBucket: "oop-webapp-bits.appspot.com",
+  messagingSenderId: "878639828232",
+  appId: "1:878639828232:web:9948021e1c0b3772aa30bd",
+  measurementId: "G-X05F5Q19B4"
+};
+    firebase.initializeApp(firebaseConfig);
+
+    // Get a reference to the Firestore database
+    var db = firebase.firestore();
+
 
 //---------------------MENU PAGE-----------------------------
 var cartItems = {};
@@ -83,61 +100,64 @@ function placeOrder() {
   // Generate OTP
   var otp = Math.floor(1000 + Math.random() * 9000);
 
-  // Display order details and OTP in a popup
-  var orderSummary = orderText + "\nTotal Bill: ₹" + totalBill.toFixed(2) + "\n\nOTP: " + otp;
-  alert("Order Placed!\n\n" + orderSummary);
+  var orderData = {
+    orderText: orderText,
+    totalBill: totalBill.toFixed(2),
+    otp: otp
+  };
+
+  // Send the order data to the backend using a POST request
+  fetch('/createOrder', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(orderData)
+  })
+    .then(function(response) {
+      if (response.ok) {
+        return response.json();
+      } else {
+        throw new Error('Error placing order');
+      }
+    })
+    .then(function(data) {
+      // Handle the response from the server
+      console.log(data);
+      // You can display a success message or perform any other actions
+    })
+    .catch(function(error) {
+      // Handle any errors
+      console.error(error);
+    });
 
   // Clear the cart and reset quantity to zero
   cartItems = {};
   updateCart();
 }
 
-
-//-------------------LOGIN POP UP------------------------
-const wrapper = document.querySelector('.wrapper');
-const loginLink = document.querySelector('.login-link');
-const signupLink = document.querySelector('.sign-up-link');
-const btnpopup = document.querySelector('.btnLogin-popup')
-const iconClose = document.querySelector('.icon-close')
-
-
-signupLink.addEventListener('click', ()=>{
-  wrapper.classList.add('active');
-});
-
-loginLink.addEventListener('click', ()=>{
-  wrapper.classList.remove('active');
-});
-
-btnpopup.addEventListener('click', ()=>{
-  wrapper.classList.add('active-popup');
-});
-iconClose.addEventListener('click', ()=>{
-  wrapper.classList.remove('active-popup','active');
-});
-
 //------------------SIGN UP DATA ENTRY-------------------
 document.getElementById("signup-form").addEventListener("submit", function(event) {
   event.preventDefault(); // Prevent form submission
 
   // Get form data
-  const username = document.getElementById("username").value;
+  const name = document.getElementById("name").value;
   // const eateryId = document.getElementById("eatery-id").value;
   // const eateryName = document.getElementById("eatery-name").value;
   const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
+  const pass = document.getElementById("pass").value;
 
   // Create an object to hold the form data
   const formData = {
-    username: username,
+    name: name,
     // eateryId: eateryId,
     // eateryName: eateryName,
     email: email,
-    password: password
+    pass: pass
   };
 
   // Send form data to the Spring Boot backend
-  fetch("/signup", {
+  fetch("/createStudent", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
@@ -169,17 +189,17 @@ document.getElementById("login-form").addEventListener("submit", function(event)
 
   // Get form data
   const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
+  const pass = document.getElementById("pass").value;
 
   // Create an object to hold the form data
   const formData = {
     email: email,
-    password: password
+    pass: pass
   };
 
   // Send form data to the Spring Boot backend
-  fetch("/login", {
-    method: "POST",
+  fetch("/getStudent", {
+    method: "GET",
     headers: {
       "Content-Type": "application/json"
     },
@@ -202,3 +222,51 @@ document.getElementById("login-form").addEventListener("submit", function(event)
     console.error(error);
   });
 });
+
+// ------------------ qUERY FOR ORDER DATA RETRIEVAL-------------------------
+// Function to create nested divs with different class names
+function createNestedDivs(level, parentDiv, data, className) {
+  var currentDiv = document.createElement("div");
+  currentDiv.className = className; // Set the class name for the current div
+
+  if (level === 1) {
+    currentDiv.classList.add("food-items"); // Add additional class for specific styling
+    currentDiv.innerHTML = `
+      <h5>Order Placed For:</h5>
+      <br>
+      <p>${data.order}</p>
+      <h5>Total Bill: &#8377; ${data.totalBill}</h5>
+    `;
+  } else {
+    currentDiv.textContent = "Level " + level + " Data: " + JSON.stringify(data);
+  }
+
+  parentDiv.appendChild(currentDiv);
+
+  if (level < 4) {
+    var nestedData = data["level" + (level + 1)];
+    var nestedClassName = "nested-div-level-" + (level + 1); // Generate different class name for each level
+    createNestedDivs(level + 1, currentDiv, nestedData, nestedClassName);
+  }
+}
+
+// Function to retrieve data and create nested divs with different class names
+function retrieveDataAndCreateDivs() {
+  var menuDiv = document.querySelector(".menu");
+
+  db.collection("Order")
+    .get()
+    .then(function (querySnapshot) {
+      querySnapshot.forEach(function (doc, index) {
+        var docData = doc.data();
+        var className = "nested-div-level-1-" + (index + 1); // Generate different class name for each document
+        createNestedDivs(1, menuDiv, docData, className);
+      });
+    })
+    .catch(function (error) {
+      console.error("Error retrieving data:", error);
+    });
+}
+
+// Call the function to retrieve data and create divs with different class names
+retrieveDataAndCreateDivs();
