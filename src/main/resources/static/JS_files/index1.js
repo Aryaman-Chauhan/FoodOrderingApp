@@ -142,16 +142,12 @@ document.getElementById("signup-form").addEventListener("submit", function(event
 
   // Get form data
   const name = document.getElementById("name").value;
-  // const eateryId = document.getElementById("eatery-id").value;
-  // const eateryName = document.getElementById("eatery-name").value;
   const email = document.getElementById("email").value;
   const pass = document.getElementById("pass").value;
 
   // Create an object to hold the form data
   const formData = {
     name: name,
-    // eateryId: eateryId,
-    // eateryName: eateryName,
     email: email,
     pass: pass
   };
